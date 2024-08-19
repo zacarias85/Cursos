@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Área de Membros</h2>
+{% for course in courses %}
+    <div class="course">
+        <h3>{{ course['title'] }}</h3>
+        <p>{{ course['description'] }}</p>
+        <div class="course-content">{{ course['content'] }}</div>
+        {% if course['video_path'] %}
+            <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename=course['video_path']) }}" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        {% endif %}
+        {% if course['pdf_path'] %}
+            <a href="{{ url_for('static', filename=course['pdf_path']) }}" target="_blank">Ver PDF</a>
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}

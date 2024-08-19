@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Bem-vindo à Plataforma de Conteúdos Digitais</h1>
+<p>Aqui você encontrará diversos cursos e conteúdos digitais para aprimorar seus conhecimentos.</p>
+
+{% if 'user_id' not in session %}
+    <div class="cta-buttons">
+        <a href="{{ url_for('login') }}" class="button">Fazer Login</a>
+        <a href="{{ url_for('register') }}" class="button">Registrar-se</a>
+    </div>
+{% else %}
+    <p>Você está logado. <a href="{{ url_for('member_area') }}">Acesse a área de membros</a> para ver nossos cursos.</p>
+{% endif %}
+
+<h2>Nossos Cursos em Destaque</h2>
+<div class="featured-courses">
+    <div class="course-preview">
+        <h3>Curso de Programação Web</h3>
+        <p>Aprenda a criar sites incríveis com HTML, CSS e JavaScript.</p>
+    </div>
+    <div class="course-preview">
+        <h3>Marketing Digital</h3>
+        <p>Domine as estratégias de marketing online e aumente suas vendas.</p>
+    </div>
+</div>
+{% endblock %}

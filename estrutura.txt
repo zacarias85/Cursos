@@ -1,0 +1,22 @@
+project/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+│
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── login.html
+│   ├── register.html
+│   ├── member_area.html
+│   └── upload_course.html
+│
+├── uploads/
+│   ├── videos/
+│   └── pdfs/
+│
+├── app.py
+└── database.py

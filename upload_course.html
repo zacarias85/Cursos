@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Adicionar Novo Curso</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+        <label for="description">Descrição:</label>
+        <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+        <label for="content">Conteúdo:</label>
+        <textarea id="content" name="content" required></textarea>
+    </div>
+    <div>
+        <label for="video">Vídeo:</label>
+        <input type="file" id="video" name="video" accept="video/mp4">
+    </div>
+    <div>
+        <label for="pdf">PDF:</label>
+        <input type="file" id="pdf" name="pdf" accept="application/pdf">
+    </div>
+    <button type="submit">Enviar Curso</button>
+</form>
+{% endblock %}
